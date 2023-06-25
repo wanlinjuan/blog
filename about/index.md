@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About Me
-tags: [about, Jekyll, theme, moon]
+tags: [about]
 date: 2023-06-24
 comments: false
 ---
@@ -12,12 +12,12 @@ comments: false
 Third-year PhD student in Biostatistics. BS in Applied mathematics and MS in Financial Statistics. Strong background in Statistics, Biostatistics and Mathematics. Advanced skills in bioinformatics, data analysis, machine learning, programming, mathematical modeling and quantitative finance. A fast, creative and energetic learner. 
 
 ## Education
-*Medical College of Wisconsin, Milwaukee, WI, USA
-Doctor of Philosophy, Biostatistics, 3.90/4.00	9/2020 – E 5/2025
-Relevant Coursework: Inference, Clinical Trials, Survival Analysis, Statistical Genetics, Bayes, MCMC, Bioinformatics, Models & Methods, Linear Models, Biostatistical computing(R, SAS, simulation), consulting, etc.
-*Rutgers University, New Brunswick, NJ, USA
+*Medical College of Wisconsin, Milwaukee, WI, USA\\
+Doctor of Philosophy, Biostatistics, 3.90/4.00	9/2020 – E 5/2025\\
+Relevant Coursework: Inference, Clinical Trials, Survival Analysis, Statistical Genetics, Bayes, MCMC, Bioinformatics, Models & Methods, Linear Models, Biostatistical computing(R, SAS, simulation), consulting, etc.\\
+*Rutgers University, New Brunswick, NJ, USA\\
 Master of Science, Financial Statistics, 3.90/4.00	9/2018 – 5/2020
-*Northwest University, Xi’an, Shaanxi, China
+*Northwest University, Xi’an, Shaanxi, China\\
 Bachelor of Science, Applied Mathematics, 3.41/4.00	9/2014 – 7/2018
 
 ## Skills
