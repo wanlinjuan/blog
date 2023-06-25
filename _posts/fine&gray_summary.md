@@ -1,10 +1,9 @@
 ## The model
 T: failure times. C: censoring times. Observe $X=min(T,C), \Delta=I(T\le C)$ and Z.\\
 Subdistribution hazard for $T*=I(\epsilon=1)T+(1-I(\epsilon=1)\infty$:
-\begin{align*}
-\lambda_1(t;Z)&= lim_{\Delta t\to 0}\frac{1}{\Delta t} Pr(t\le T\le t+\Delta t , \epsilon=1 | T\ge t\cup (T\le t)\cap \epsilon\ne1, Z)\\
-&=[dF_1(t;Z)/dt] / [1-F_1(t;Z)]=-dlog[1-F_1(t;Z)]/dt
-\end{align*}
+\[\lambda_1(t;Z)&= lim_{\Delta t\to 0}\frac{1}{\Delta t} Pr(t\le T\le t+\Delta t , \epsilon=1 | T\ge t\cup (T\le t)\cap \epsilon\ne1, Z)\\
+&=[dF_1(t;Z)/dt] / [1-F_1(t;Z)]=-dlog[1-F_1(t;Z)]/dt\]
+
 Risk set associated with $\lambda_1$ is unnatural: those who failed from causes other than 1 prior to time t are not at risk at t.
 
 \section{Complete data (no censoring)}
