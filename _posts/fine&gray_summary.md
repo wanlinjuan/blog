@@ -1,19 +1,21 @@
 ## Fine & Gray Model
-T: failure times. C: censoring times. Observe $X=min(T,C), \Delta=I(T\le C)$ and Z.\\
+T: failure times. C: censoring times. Observe $X=min(T,C), \Delta=I(T\le C)$ and Z.
+
 Subdistribution hazard for $T*=I(\epsilon=1)T+(1-I(\epsilon=1)\infty$:
-\[\lambda_1(t;Z)&= lim_{\Delta t\to 0}\frac{1}{\Delta t} Pr(t\le T\le t+\Delta t , \epsilon=1 | T\ge t\cup (T\le t)\cap \epsilon\ne1, Z)\\
-&=[dF_1(t;Z)/dt] / [1-F_1(t;Z)]=-dlog[1-F_1(t;Z)]/dt\]
+$$\lambda_1(t;Z)&= lim_{\Delta t\to 0}\frac{1}{\Delta t} Pr(t\le T\le t+\Delta t , \epsilon=1 | T\ge t\cup (T\le t)\cap \epsilon\ne1, Z)\\
+&=[dF_1(t;Z)/dt] / [1-F_1(t;Z)]=-dlog[1-F_1(t;Z)]/dt$$
 
 Risk set associated with $\lambda_1$ is unnatural: those who failed from causes other than 1 prior to time t are not at risk at t.
 
 ## Complete data (no censoring)
-Risk set at the time of failure for j-th individual: $R_i=\{j: (T_j\ge T_i)\cup (T_j\le T_i \cap \epsilon_j \ne 1)\}$. Those who has not failed from cause of interest by time t. \\
-$N_i(t)=I(T_i\le t, \epsilon_i=1)$. $Y_i(t)=1-N_i(t-)$.\\
+Risk set at the time of failure for j-th individual: $R_i=\{j: (T_j\ge T_i)\cup (T_j\le T_i \cap \epsilon_j \ne 1)\}$. Those who has not failed from cause of interest by time t. 
 
-Log-partial likelihood (same as Cox model):
+$$ N_i(t)=I(T_i\le t, \epsilon_i=1), Y_i(t)=1-N_i(t-) $$
+
+* Log-partial likelihood (same as Cox model):
 $$log[L(\beta)]=\sum_{i=1}^n I(\epsilon_i=1) (Z_i^T(T_i)\beta - log[\sum_{j\in R_i} exp(Z_j^T(T_i)\beta)])$$
 
-Score function:
+* Score function:
 $$U_1(\beta) = \sum_{i=1}^n \int_0^\infty \left[Z_i(s) - \frac{\sum_j Y_j(s)Z_j(s)exp(Z_j^T(s)\beta)}{\sum_j Y_j(s)exp(Z_j^T(s)\beta)}\right]dN_i(s)$$
 $$=\sum_{i=1}^n \int_0^\infty \left[Z_i(s) - \frac{\sum_j Y_j(s)Z_j(s)exp(Z_j^T(s)\beta)}{\sum_j Y_j(s)exp(Z_j^T(s)\beta)}\right]dM^1_i(s,\beta)$$
 
@@ -21,11 +23,13 @@ where $M_i^{1}(t,\beta) = N_i(t) - \int^t_0 Y_i(u)\lambda_{10}(u)exp(Z_i^T(u)\be
 
 $M_i^1(t,\beta_0)$ is martingale under $\mathcal{F}^1(t) = \sigma\{ N_i(u), Y_i(u)Z_i(u), u\le t, i=1,...,n \}$.
 
-\section{Censoring complete data (administrative censoring)}
-Risk set for j-th individual: $R_i=\{ j: (C_j\wedge T_j\ge T_i) \cup (T_j \le T_i \cap \epsilon_j\ne1 \cap C_j\ge T_i) \}$. \\
+## Censoring complete data (administrative censoring)
+
+Risk set for j-th individual: $R_i=\{ j: (C_j\wedge T_j\ge T_i) \cup (T_j \le T_i \cap \epsilon_j\ne1 \cap C_j\ge T_i) \}$. 
+
 $Y_i^*(t) = I(C_i\ge t)[1-N_i(t-)]$. $N_i^*(t)=I(C_i\ge t)I(T_i\le t,\epsilon_i=1).$\\
 
-Score function:
+* Score function:
 $$U_{1*}(\beta) = \sum_{i=1}^n \int_0^\infty \left[Z_i(s) - \frac{\sum_j Y_j^*(s)Z_j(s)exp(Z_j^T(s)\beta)}{\sum_j Y_j^*(s)exp(Z_j^T(s)\beta)}\right]dN_i^{*}(s)$$
 $$=\sum_{i=1}^n \int_0^\infty \left[Z_i(s) - \frac{\sum_j Y_j^*(s)Z_j(s)exp(Z_j^T(s)\beta)}{\sum_j Y_j^*(s)exp(Z_j^T(s)\beta)}\right]dM_i^{1*}(s,\beta)$$
 
@@ -38,17 +42,20 @@ $\mathcal{F}^{1*}(t) = \sigma\{ I(C_i\ge u), I(C_i\ge u)N_i(u), Y_i^*(u), Y_i^*(
 ## Incomplete data
 Censoring distribution $G(t)=P(C\ge t)$. $\hat{G}(t)$: Kaplan-Meier estimate of survival function of censoring.\\
 Adapt inverse probability of censoring weighting (IPCW). Time-dependent weight $w_i(t)=\frac{r_i(t)\hat{G}(t)}{\hat{G}(X_i\wedge t)}$.\\
-$\tilde{w}_i(t)=\frac{r_i(t){G}(t)}{{G}(X_i\wedge t)}$.\\
+$\tilde{w}_i(t)=\frac{r_i(t){G}(t)}{{G}(X_i\wedge t)}$.
 
-Score function:\\
-\begin{align*}
+* Score function:
+
+$
 U_2(\beta) &= \sum_{i=1}^n \int_0^\infty \left[Z_i(s) - \frac{\sum_jw_j(s)Y_j(s)Z_j(s)exp(Z_j^T(s)\beta)}{\sum_jw_j(s)Y_j(s)exp(Z_j^T(s)\beta)}\right]w_i(s)dN_i(s)\\
 &=\sum_{i=1}^n \int_0^\infty \left[Z_i(s) - \frac{\sum_jw_j(s)Y_j(s)Z_j(s)exp(Z_j^T(s)\beta)}{\sum_jw_j(s)Y_j(s)exp(Z_j^T(s)\beta)}\right]w_i(s)dM_i^1(s,\beta)\\
 &=\sum_{i=1}^n \int_0^\infty \left[Z_i(s) - \frac{\hat{S}_2^{(1)}(\beta,u)}{\hat{S}_2^{(0)}(\beta,u)} \right] \tilde{w}_i(s)dM_i^1(s,\beta) + \sum^n_{i=1}R_i(\beta) +Op(1)\\
 &= \sum_i (\eta_i+\psi_i) +Op(1)
-\end{align*}
+$
+
 Under regularity conditions, 
 $$\eta_i=\int_0^\infty \left[Z_i(s) - \frac{s^{(1)}(\beta,u)}{s^{(0)}(\beta,u)} \right] \tilde{w}_i(s)dM_i^1(s,\beta)$$
+
 \begin{align*}
 \psi_i&=\int_0^\infty [{w}_i(t) - \tilde{w}_i(t)] \left[Z_i(s) - \frac{s^{(1)}(\beta,u)}{s^{(0)}(\beta,u)} \right]  r_i(u)dM_i^1(u,\beta)\\
 &=\int_0^\infty \left[-\frac{G(t)I(X_i<t)}{G(X_i)} \sum_j \int_{X_i}^t \frac{dM_j^c(u)}{\sum_{k=1}^nI(X_k\ge u)} +Op(1) \right] \left[Z_i(s) - \frac{\hat{S}_2^{(1)}(\beta,u)}{\hat{S}_2^{(0)}(\beta,u)} \right] r_i(u)dM_i^1(u,\beta)\\
