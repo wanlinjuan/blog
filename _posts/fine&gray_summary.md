@@ -1,4 +1,4 @@
-## The model
+## Fine & Gray Model
 T: failure times. C: censoring times. Observe $X=min(T,C), \Delta=I(T\le C)$ and Z.\\
 Subdistribution hazard for $T*=I(\epsilon=1)T+(1-I(\epsilon=1)\infty$:
 \[\lambda_1(t;Z)&= lim_{\Delta t\to 0}\frac{1}{\Delta t} Pr(t\le T\le t+\Delta t , \epsilon=1 | T\ge t\cup (T\le t)\cap \epsilon\ne1, Z)\\
@@ -6,7 +6,7 @@ Subdistribution hazard for $T*=I(\epsilon=1)T+(1-I(\epsilon=1)\infty$:
 
 Risk set associated with $\lambda_1$ is unnatural: those who failed from causes other than 1 prior to time t are not at risk at t.
 
-\section{Complete data (no censoring)}
+## Complete data (no censoring)
 Risk set at the time of failure for j-th individual: $R_i=\{j: (T_j\ge T_i)\cup (T_j\le T_i \cap \epsilon_j \ne 1)\}$. Those who has not failed from cause of interest by time t. \\
 $N_i(t)=I(T_i\le t, \epsilon_i=1)$. $Y_i(t)=1-N_i(t-)$.\\
 
@@ -35,8 +35,7 @@ $M_i^{1*}(t,\beta_0)$ is martingale under the censoring-complete filtration
 
 $\mathcal{F}^{1*}(t) = \sigma\{ I(C_i\ge u), I(C_i\ge u)N_i(u), Y_i^*(u), Y_i^*(u)Z_i(u), u\le t, i=1,...,n \}$.
 
-\newpage
-\section{Incomplete data}
+## Incomplete data
 Censoring distribution $G(t)=P(C\ge t)$. $\hat{G}(t)$: Kaplan-Meier estimate of survival function of censoring.\\
 Adapt inverse probability of censoring weighting (IPCW). Time-dependent weight $w_i(t)=\frac{r_i(t)\hat{G}(t)}{\hat{G}(X_i\wedge t)}$.\\
 $\tilde{w}_i(t)=\frac{r_i(t){G}(t)}{{G}(X_i\wedge t)}$.\\
@@ -73,7 +72,7 @@ $$n^{1/2}(\hat{\beta}-\beta_0) \sim N(0, \hat{\Omega}^{-1}\hat{\Sigma}\hat{\Omeg
 where $\hat{\Sigma} = n^{-1}\sum_i (\hat{\eta}_i+\hat{\psi}_i)^{\otimes 2}$.
 
 
-\section{Predicting cumulative incidence with incomplete data}
+## Predicting cumulative incidence with incomplete data
 $$\hat{\Lambda}_{10}(t)= n^{-1} \sum_i \int_0^t \frac{1}{\hat{S}_2^{(0)}(\hat{\beta},u)} w_i(u)dN_i(u)$$
 $$\hat{\Lambda}_1(t;Z_0)=\int_0^t exp(Z_0^T(u)\hat{\beta}) d\hat{\Lambda}_{10}(u)$$
 \\
