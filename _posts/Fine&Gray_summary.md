@@ -2,8 +2,9 @@
 T: failure times. C: censoring times. Observe $X=min(T,C), \Delta=I(T\le C)$ and Z.
 
 Subdistribution hazard for $T*=I(\epsilon=1)T+(1-I(\epsilon=1)\infty$:
-$$\lambda_1(t;Z)&= lim_{\Delta t\to 0}\frac{1}{\Delta t} Pr(t\le T\le t+\Delta t , \epsilon=1 | T\ge t\cup (T\le t)\cap \epsilon\ne1, Z)\\
-&=[dF_1(t;Z)/dt] / [1-F_1(t;Z)]=-dlog[1-F_1(t;Z)]/dt$$
+
+$$\lambda_1(t;Z) = lim_{\Delta t\to 0}\frac{1}{\Delta t} Pr(t\le T\le t+\Delta t , \epsilon=1 | T\ge t\cup (T\le t)\cap \epsilon\ne1, Z)
+=(dF_1(t;Z)/dt) / (1-F_1(t;Z))=-dlog(1-F_1(t;Z))/dt$$
 
 Risk set associated with $\lambda_1$ is unnatural: those who failed from causes other than 1 prior to time t are not at risk at t.
 
@@ -13,10 +14,11 @@ Risk set at the time of failure for j-th individual: $R_i=\{j: (T_j\ge T_i)\cup 
 $$ N_i(t)=I(T_i\le t, \epsilon_i=1), Y_i(t)=1-N_i(t-) $$
 
 * Log-partial likelihood (same as Cox model):
-$$log[L(\beta)]=\sum_{i=1}^n I(\epsilon_i=1) (Z_i^T(T_i)\beta - log[\sum_{j\in R_i} exp(Z_j^T(T_i)\beta)])$$
+$$log(L(\beta))=\sum_{i=1}^n I(\epsilon_i=1) (Z_i^T(T_i)\beta - log(\sum_{j\in R_i} exp(Z_j^T(T_i)\beta)))$$
 
 * Score function:
-$$U_1(\beta) = \sum_{i=1}^n \int_0^\infty \left[Z_i(s) - \frac{\sum_j Y_j(s)Z_j(s)exp(Z_j^T(s)\beta)}{\sum_j Y_j(s)exp(Z_j^T(s)\beta)}\right]dN_i(s)$$
+$$U_1(\beta) = \sum_{i=1}^n \int_0^\infty \left(Z_i(s) - \frac{\sum_j Y_j(s)Z_j(s)exp(Z_j^T(s)\beta)}{\sum_j Y_j(s)exp(Z_j^T(s)\beta)}\right)dN_i(s)$$
+
 $$=\sum_{i=1}^n \int_0^\infty \left[Z_i(s) - \frac{\sum_j Y_j(s)Z_j(s)exp(Z_j^T(s)\beta)}{\sum_j Y_j(s)exp(Z_j^T(s)\beta)}\right]dM^1_i(s,\beta)$$
 
 where $M_i^{1}(t,\beta) = N_i(t) - \int^t_0 Y_i(u)\lambda_{10}(u)exp(Z_i^T(u)\beta)$.
@@ -27,11 +29,12 @@ $M_i^1(t,\beta_0)$ is martingale under $\mathcal{F}^1(t) = \sigma\{ N_i(u), Y_i(
 
 Risk set for j-th individual: $R_i=\{ j: (C_j\wedge T_j\ge T_i) \cup (T_j \le T_i \cap \epsilon_j\ne1 \cap C_j\ge T_i) \}$. 
 
-$Y_i^*(t) = I(C_i\ge t)[1-N_i(t-)]$. $N_i^*(t)=I(C_i\ge t)I(T_i\le t,\epsilon_i=1).$\\
+$$ Y_i^*(t) = I(C_i\ge t)(1-N_i(t-)), N_i^*(t)=I(C_i\ge t)I(T_i\le t,\epsilon_i=1)$$
 
 * Score function:
-$$U_{1*}(\beta) = \sum_{i=1}^n \int_0^\infty \left[Z_i(s) - \frac{\sum_j Y_j^*(s)Z_j(s)exp(Z_j^T(s)\beta)}{\sum_j Y_j^*(s)exp(Z_j^T(s)\beta)}\right]dN_i^{*}(s)$$
-$$=\sum_{i=1}^n \int_0^\infty \left[Z_i(s) - \frac{\sum_j Y_j^*(s)Z_j(s)exp(Z_j^T(s)\beta)}{\sum_j Y_j^*(s)exp(Z_j^T(s)\beta)}\right]dM_i^{1*}(s,\beta)$$
+$$U_{1*}(\beta) = \sum_{i=1}^n \int_0^\infty \left(Z_i(s) - \frac{\sum_j Y_j^*(s)Z_j(s)exp(Z_j^T(s)\beta)}{\sum_j Y_j^*(s)exp(Z_j^T(s)\beta)}\right)dN_i^{*}(s)$$
+
+$$=\sum_{i=1}^n \int_0^\infty \left(Z_i(s) - \frac{\sum_j Y_j^*(s)Z_j(s)exp(Z_j^T(s)\beta)}{\sum_j Y_j^*(s)exp(Z_j^T(s)\beta)}\right) dM_i^{1*}(s,\beta)$$
 
 where  $M_i^{1*}(t,\beta) = \int^t_0 I(C_i\ge u) dN_i(u) - \int^t_0 Y_i^*(u)\lambda_{10}(u)exp(Z_i^T(u)\beta)$.
 
@@ -40,49 +43,59 @@ $M_i^{1*}(t,\beta_0)$ is martingale under the censoring-complete filtration
 $\mathcal{F}^{1*}(t) = \sigma\{ I(C_i\ge u), I(C_i\ge u)N_i(u), Y_i^*(u), Y_i^*(u)Z_i(u), u\le t, i=1,...,n \}$.
 
 ## Incomplete data
-Censoring distribution $G(t)=P(C\ge t)$. $\hat{G}(t)$: Kaplan-Meier estimate of survival function of censoring.\\
-Adapt inverse probability of censoring weighting (IPCW). Time-dependent weight $w_i(t)=\frac{r_i(t)\hat{G}(t)}{\hat{G}(X_i\wedge t)}$.\\
+Censoring distribution $G(t)=P(C\ge t)$. $\hat{G}(t)$: Kaplan-Meier estimate of survival function of censoring.
+
+Adapt inverse probability of censoring weighting (IPCW). Time-dependent weight $w_i(t)=\frac{r_i(t)\hat{G}(t)}{\hat{G}(X_i\wedge t)}$.
+
 $\tilde{w}_i(t)=\frac{r_i(t){G}(t)}{{G}(X_i\wedge t)}$.
 
 * Score function:
 
 $
-U_2(\beta) &= \sum_{i=1}^n \int_0^\infty \left[Z_i(s) - \frac{\sum_jw_j(s)Y_j(s)Z_j(s)exp(Z_j^T(s)\beta)}{\sum_jw_j(s)Y_j(s)exp(Z_j^T(s)\beta)}\right]w_i(s)dN_i(s)\\
-&=\sum_{i=1}^n \int_0^\infty \left[Z_i(s) - \frac{\sum_jw_j(s)Y_j(s)Z_j(s)exp(Z_j^T(s)\beta)}{\sum_jw_j(s)Y_j(s)exp(Z_j^T(s)\beta)}\right]w_i(s)dM_i^1(s,\beta)\\
-&=\sum_{i=1}^n \int_0^\infty \left[Z_i(s) - \frac{\hat{S}_2^{(1)}(\beta,u)}{\hat{S}_2^{(0)}(\beta,u)} \right] \tilde{w}_i(s)dM_i^1(s,\beta) + \sum^n_{i=1}R_i(\beta) +Op(1)\\
+U_2(\beta) &= \sum_{i=1}^n \int_0^\infty \left(Z_i(s) - \frac{\sum_jw_j(s)Y_j(s)Z_j(s)exp(Z_j^T(s)\beta)}{\sum_jw_j(s)Y_j(s)exp(Z_j^T(s)\beta)}\right)w_i(s)dN_i(s)\\
+&=\sum_{i=1}^n \int_0^\infty \left(Z_i(s) - \frac{\sum_jw_j(s)Y_j(s)Z_j(s)exp(Z_j^T(s)\beta)}{\sum_jw_j(s)Y_j(s)exp(Z_j^T(s)\beta)}\right)w_i(s)dM_i^1(s,\beta)\\
+&=\sum_{i=1}^n \int_0^\infty \left(Z_i(s) - \frac{\hat{S}_2^{(1)}(\beta,u)}{\hat{S}_2^{(0)}(\beta,u)} \right) \tilde{w}_i(s)dM_i^1(s,\beta) + \sum^n_{i=1}R_i(\beta) +Op(1)\\
 &= \sum_i (\eta_i+\psi_i) +Op(1)
 $
 
 Under regularity conditions, 
-$$\eta_i=\int_0^\infty \left[Z_i(s) - \frac{s^{(1)}(\beta,u)}{s^{(0)}(\beta,u)} \right] \tilde{w}_i(s)dM_i^1(s,\beta)$$
+$$\eta_i=\int_0^\infty \left(Z_i(s) - \frac{s^{(1)}(\beta,u)}{s^{(0)}(\beta,u)} \right) \tilde{w}_i(s)dM_i^1(s,\beta)$$
 
 \begin{align*}
-\psi_i&=\int_0^\infty [{w}_i(t) - \tilde{w}_i(t)] \left[Z_i(s) - \frac{s^{(1)}(\beta,u)}{s^{(0)}(\beta,u)} \right]  r_i(u)dM_i^1(u,\beta)\\
-&=\int_0^\infty \left[-\frac{G(t)I(X_i<t)}{G(X_i)} \sum_j \int_{X_i}^t \frac{dM_j^c(u)}{\sum_{k=1}^nI(X_k\ge u)} +Op(1) \right] \left[Z_i(s) - \frac{\hat{S}_2^{(1)}(\beta,u)}{\hat{S}_2^{(0)}(\beta,u)} \right] r_i(u)dM_i^1(u,\beta)\\
-&=\int_0^\infty \frac{-lim_{n\to \infty}n^{-1}\sum_{i=1}^n \int_0^\infty \left[Z_i(s) - \frac{s^{(1)}(\beta,u)}{s^{(0)}(\beta,u)} \right] \tilde{w}_i(s)dM_i^1(s,\beta)I(s\ge u\ge X_i) }{lim_n\to \infty n^{-1} \sum_{i=1}^n I(X_i\ge u) } dM_i^c(u)\\
+\psi_i&=\int_0^\infty ({w}_i(t) - \tilde{w}_i(t)) \left(Z_i(s) - \frac{s^{(1)}(\beta,u)}{s^{(0)}(\beta,u)} \right)  r_i(u)dM_i^1(u,\beta)\\
+&=\int_0^\infty \left(-\frac{G(t)I(X_i<t)}{G(X_i)} \sum_j \int_{X_i}^t \frac{dM_j^c(u)}{\sum_{k=1}^nI(X_k\ge u)} +Op(1) \right) \left(Z_i(s) - \frac{\hat{S}_2^{(1)}(\beta,u)}{\hat{S}_2^{(0)}(\beta,u)} \right) r_i(u)dM_i^1(u,\beta)\\
+&=\int_0^\infty \frac{-lim_{n\to \infty}n^{-1}\sum_{i=1}^n \int_0^\infty \left(Z_i(s) - \frac{s^{(1)}(\beta,u)}{s^{(0)}(\beta,u)} \right) \tilde{w}_i(s)dM_i^1(s,\beta)I(s\ge u\ge X_i) }{lim_n\to \infty n^{-1} \sum_{i=1}^n I(X_i\ge u) } dM_i^c(u)\\
 &= \int_0^\infty \frac{q(u)}{\pi(u)}dM_i^c(u)
 \end{align*}
-where $dM_i^c(u) = I(X_i\le u,\Delta_i=0) - \int_0^u I(X_i\ge t) d\Lambda^c(t)$ is the martingale of censoring process under $\mathcal{F}^c(u) = \sigma\{ I(X_i\ge t), I(X_i\le t, \Delta_i=0) , Z_i(t), t\le u, \epsilon_i, i=1,...,n\}$. $\Lambda^c(u)$ is the cumulative hazard of censoring distribution.\\
+
+where $dM_i^c(u) = I(X_i\le u,\Delta_i=0) - \int_0^u I(X_i\ge t) d\Lambda^c(t)$ is the martingale of censoring process under $\mathcal{F}^c(u) = \sigma\{ I(X_i\ge t), I(X_i\le t, \Delta_i=0) , Z_i(t), t\le u, \epsilon_i, i=1,...,n\}$. $\Lambda^c(u)$ is the cumulative hazard of censoring distribution.
+
 Trick: treate censoring as an event.
 
 $\hat{S}_2^{(k)}$ and $\frac{r_i(t)}{G(X_i\wedge t)}$ are not adapted under $\mathcal{F}^1(t) = \sigma\{ N_i(u), Y_i(u)Z_i(u), u\le t, i=1,...,n \}$. $\eta_i$ is NOT a martingale at $\beta_0$. 
 
-$n^{-1}[U_2(\beta) - U_{1*}(\beta)]\to_p 0$ uniformly for $\beta$ in compact neighborhood of $\beta_0$.
+$n^{-1}(U_2(\beta) - U_{1*}(\beta))\to_p 0$ uniformly for $\beta$ in compact neighborhood of $\beta_0$.
 
 $n^{-1/2} U_2(\beta_0)$ is the sum of n iid distributed random variables. According to empirical process theory and by multivariate central limit theorem, 
-$$n^{-1/2}U_2(\beta_0) \sim N(0,E[(\eta_i+\psi_i)(\eta_i+\psi_i)^T])$$
+$$n^{-1/2}U_2(\beta_0) \sim N(0,E((\eta_i+\psi_i)(\eta_i+\psi_i)^T))$$
+
 By Taylor expansion,
+
 $$n^{1/2}(\hat{\beta}-\beta_0)\approx \Omega^{-1}[n^{-1/2}U_2(\beta_0)]$$
-where $\Omega$ is the limit of negative of the partial derivative matrix of score function at $\beta_0$.\\
+
+where $\Omega$ is the limit of negative of the partial derivative matrix of score function at $\beta_0$.
+
 By Slusky theorem, 
+
 $$n^{1/2}(\hat{\beta}-\beta_0) \sim N(0, \hat{\Omega}^{-1}\hat{\Sigma}\hat{\Omega}^{-1})$$
 where $\hat{\Sigma} = n^{-1}\sum_i (\hat{\eta}_i+\hat{\psi}_i)^{\otimes 2}$.
 
 
 ## Predicting cumulative incidence with incomplete data
 $$\hat{\Lambda}_{10}(t)= n^{-1} \sum_i \int_0^t \frac{1}{\hat{S}_2^{(0)}(\hat{\beta},u)} w_i(u)dN_i(u)$$
+
 $$\hat{\Lambda}_1(t;Z_0)=\int_0^t exp(Z_0^T(u)\hat{\beta}) d\hat{\Lambda}_{10}(u)$$
-\\
-$n^{1/2}[\hat{\Lambda}_1(t;Z_0)-{\Lambda}_1(t;Z_0)]$ converges weakly to Gaussian process on $(0,\tau]$, where $Pr(X\ge \tau)>0$.\\
+
+$n^{1/2}[\hat{\Lambda}_1(t;Z_0)-{\Lambda}_1(t;Z_0)]$ converges weakly to Gaussian process on $(0,\tau]$, where $Pr(X\ge \tau)>0$.
 By functional delta method,$n^{1/2}[\hat{F}_1(t;Z_0)-F_1(t;Z_0)]$ converges weakly to Gaussian process where $\hat{F}_1(t;Z_0) = 1-exp(-\hat{\Lambda}_1(t;Z_0))$.
 
