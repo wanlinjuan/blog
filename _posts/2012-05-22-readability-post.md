@@ -23,6 +23,7 @@ Risk set at the time of failure for j-th individual: $R_i=\{j: (T_j\ge T_i)\cup 
 $$ N_i(t)=I(T_i\le t, \epsilon_i=1), Y_i(t)=1-N_i(t-) $$
 
 * Log-partial likelihood (same as Cox model):
+
 $$log(L(\beta))=\sum_{i=1}^n I(\epsilon_i=1) (Z_i^T(T_i)\beta - log(\sum_{j\in R_i} exp(Z_j^T(T_i)\beta)))$$
 
 * Score function:
