@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Testing Readability with a Bunch of Text"
-date: 2012-05-22
-excerpt: "A ton of text to test readability."
-tags: [sample post, readability, test]
+title: "Notes - Fine & Gray Model"
+date: 2023-06-26
+excerpt: "Fine & Gray model."
+tags: [test]
 comments: true
 ---
 
