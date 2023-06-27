@@ -12,10 +12,12 @@ T: failure times. C: censoring times. Observe $X=min(T,C), \Delta=I(T\le C)$ and
 
 Subdistribution hazard for $T*=I(\epsilon=1)T+(1-I(\epsilon=1)\infty$:
 
-$$\lambda_1(t;Z) = lim_{\Delta t\to 0}\frac{1}{\Delta t} Pr(t\le T\le t+\Delta t , \epsilon=1 | T\ge t\cup (T\le t)\cap \epsilon\ne1, Z)
-=(dF_1(t;Z)/dt) / (1-F_1(t;Z))=-dlog(1-F_1(t;Z))/dt$$
+$$\begin{aligned} 
+\lambda_1(t;Z) = lim_{\Delta t\to 0}\frac{1}{\Delta t} Pr(t\le T\le t+\Delta t , \epsilon=1 | T\ge t\cup (T\le t)\cap \epsilon\ne1, Z)
+=(dF_1(t;Z)/dt) / (1-F_1(t;Z))=-dlog(1-F_1(t;Z))/dt 
+\end{aligned}$$
 
-Risk set associated with $\lambda_1$ is unnatural: those who failed from causes other than 1 prior to time t are not at risk at t.
+Risk set associated with $\mathrm{\lambda}_1$ is unnatural: those who failed from causes other than 1 prior to time t are not at risk at t.
 
 ## Complete data (no censoring)
 Risk set at the time of failure for j-th individual: $R_i=\{j: (T_j\ge T_i)\cup (T_j\le T_i \cap \epsilon_j \ne 1)\}$. Those who has not failed from cause of interest by time t. 
