@@ -3,7 +3,7 @@ layout: post
 title: "Notes - Variable Selection via Nonconcave PenalizedLikelihood and its Oracle Properties"
 date: 2023-06-27
 excerpt: "Paper summary of \"Variable Selection via Nonconcave PenalizedLikelihood and its Oracle Properties\"."
-tags: [notes]
+tags: [notes, statistics]
 comments: true
 ---
 
