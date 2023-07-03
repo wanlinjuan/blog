@@ -5,6 +5,8 @@ date: 2023-06-28
 excerpt: "Review of statistical inference."
 tags: [notes, biostatistics, statistics, inference]
 comments: true
+mathjax: true
+catalog: true
 
 ---
 
