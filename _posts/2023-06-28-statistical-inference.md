@@ -11,7 +11,8 @@ catalog: true
 ---
 
 
-[TOC]
+* TOC
+{:toc}
 
 
 
