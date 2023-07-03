@@ -20,7 +20,9 @@ kramdown:
   entity_output:    as_char
   toc_levels:       1..6
   enable_coderay:   false
-mathjax:            true
+mathjax:            
+    enable: true
+    cdn: https://cdn,jsdelivr.net/npm/mathjax3/es5/tex-mml-chtml.js
 sass:
   sass_dir:         _sass
   style:            compressed
