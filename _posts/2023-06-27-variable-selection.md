@@ -9,9 +9,9 @@ comments: true
 
 ## Penalized least square
 
-Consider the linear regression model \\(y=X\beta+\epsilon\\), where columns of \textbf{X} are orthonormal.
+Consider the linear regression model \\(y=X\beta+\epsilon\\), where columns of \\(\textbf{X}\\) are orthonormal.
 
-Let $z=\hat{\beta}^{OLS}=X^T y$, $\hat{y}=XX^Ty$. The form of penalized least square is
+Let \\(z=\hat{\beta}^{OLS}=X^T y\\), \\(\hat{y}=XX^Ty\\). The form of penalized least square is
 
 $$\begin{equation}
 \frac{1}{2} \parallel y-X\beta\parallel^2 +\lambda\sum^d_{j=1}p_j(|\beta_j|)
@@ -20,10 +20,10 @@ $$\begin{equation}
 
 
 To solve the minimization problem of (2), we consider a more general version
-$
+\\(
     \frac{1}{2} (z-\theta)^2+p_{\lambda}(|\theta|)
-$
-, where $p_{\lambda}(\cdot)$ is the penalty function.
+\\)
+, where $p\_{\lambda}(\cdot)$ is the penalty function.
 
 
 ### A good penalty function should result in an estimator with three properties.
