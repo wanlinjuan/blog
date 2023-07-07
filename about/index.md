@@ -8,30 +8,34 @@ comments: false
     
 
 ## Summary
-Third-year PhD student in Biostatistics. BS in Applied mathematics and MS in Financial Statistics. Strong background in Statistics, Biostatistics and Mathematics. Advanced skills in bioinformatics, data analysis, machine learning, programming, mathematical modeling and quantitative finance. A fast, creative and energetic learner. 
+
+Fourth-year PhD student in Biostatistics. BS in Applied mathematics and MS in Financial Statistics. Strong background in Statistics, Biostatistics and Mathematics. Advanced skills in bioinformatics, data analysis, machine learning, programming, mathematical modeling and quantitative finance. A fast, creative and energetic learner. 
 
 ## Education
-*Medical College of Wisconsin, Milwaukee, WI, USA
+
+* Medical College of Wisconsin, Milwaukee, WI, USA
   
 Doctor of Philosophy, Biostatistics, 3.90/4.00	9/2020 – E 5/2025
   
 Relevant Coursework: Inference, Clinical Trials, Survival Analysis, Statistical Genetics, Bayes, MCMC, Bioinformatics, Models & Methods, Linear Models, Biostatistical computing(R, SAS, simulation), consulting, etc.//
 
-*Rutgers University, New Brunswick, NJ, USA
+* Rutgers University, New Brunswick, NJ, USA
   
 Master of Science, Financial Statistics, 3.90/4.00	9/2018 – 5/2020
   
-*Northwest University, Xi’an, Shaanxi, China 
+* Northwest University, Xi’an, Shaanxi, China 
   
 Bachelor of Science, Applied Mathematics, 3.41/4.00	9/2014 – 7/2018
 
 ## Skills
+
 * Core Domain Expertise:  Data Analysis, Biostatistics, Single-cell Analysis(Seurat), Survival Analysis, Machine Learning, Missing data imputation, Mathematical Modeling, Programming, Financial Analysis, Regression, Meta analysis, Feature selection, High-dimension data analysis, Bayes, Statistical consulting, Quantitative finance, Time series analysis
 * Computing and Programming:  R, SAS, MATLAB, Python, EMACS, OpenBUGS, Stan, Nimble, SPSS, C++, C, LaTex, shell script, Microsoft Office Suite, Lingo, SQL, R markdown, Rcpp
 * Language skills: English, Chinese, Japanese
 
 
 ## Research Experience
+
 ### Missing data imputation based on sampling methods in single-cell analysis       
 *	Based on downsampling and sampling methods to impute dropout events in single-cell data.
 *	Compare the clustering performance with existing methods like Scimpute and RESCUE.
