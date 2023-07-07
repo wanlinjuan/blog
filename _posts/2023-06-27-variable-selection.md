@@ -23,27 +23,23 @@ To solve the minimization problem of (2), we consider a more general version
 \\(
     \frac{1}{2} (z-\theta)^2+p_{\lambda}(|\theta|)
 \\)
-, where $p\_{\lambda}(\cdot)$ is the penalty function.
+, where \\(p\_{\lambda}(\cdot)\\) is the penalty function.
 
 
 ### A good penalty function should result in an estimator with three properties.
 
-* Unbiasedness: The resulting estimator is nearly unbiased when the true unknown parameter is large to avoid unnecessary modeling bias.
-The sufficient condition for unbiasedness for a large true parameter is that $p'_{\lambda}(|\theta|)=0$ for large $|\theta|$.
+    * Unbiasedness: The resulting estimator is nearly unbiased when the true unknown parameter is large to avoid unnecessary modeling bias. The sufficient condition for unbiasedness for a large true parameter is that (p'_{\lambda}(|\theta|)=0\\) for large \\(|\theta|\\).
 
-* Sparsity: The resulting estimator is a threshold rule.
-A sufficient condition for sparsity is that the minimum of the function $|\theta|+p'_{\lambda}(|\theta|)$ is positive.
+    * Sparsity: The resulting estimator is a threshold rule. A sufficient condition for sparsity is that the minimum of the function \\(|\theta|+p'_{\lambda}(|\theta|)\\) is positive.
 
-* Continuity: The resulting estimator is continuous in data
-z to avoid instability in model prediction.}
-The sufficient and necessary condition for continuity is that the minimum of the function $|\theta|+p'_{\lambda}(|\theta|)$ is attained at 0.
+    * Continuity: The resulting estimator is continuous in data z to avoid instability in model prediction.} The sufficient and necessary condition for continuity is that the minimum of the function $|\theta|+p'_{\lambda}(|\theta|)$ is attained at 0.
 
 ### Different penalty functions.
 
-* Bridge regression using $L_q$ penalty: $p_{\lambda}=\lambda|\theta|^q$. The solution is continuous only when $q\ge1$. But it does not produce a sparse solution when $q>1$.
-* Ridge regression using $L_2$ penalty: $p_{\lambda}=\lambda|\theta|^2$. Continuous but does not produce a sparse solution.
-* Soft thresholding(Lasso) using $L_1$ penalty: $p_{\lambda}=\lambda|\theta|$. Continuous with a thresholding rule. But shift the resulting estimator by constant $\lambda$.
-* Smoothly clipped absolute deviation (SCAD) penalty:
+    * Bridge regression using $L_q$ penalty: $p_{\lambda}=\lambda|\theta|^q$. The solution is continuous only when $q\ge1$. But it does not produce a sparse solution when $q>1$.
+    * Ridge regression using $L_2$ penalty: $p_{\lambda}=\lambda|\theta|^2$. Continuous but does not produce a sparse solution.
+    * Soft thresholding(Lasso) using $L_1$ penalty: $p_{\lambda}=\lambda|\theta|$. Continuous with a thresholding rule. But shift the resulting estimator by constant $\lambda$.
+    * Smoothly clipped absolute deviation (SCAD) penalty:
 
   $$p'_{\lambda}=\lambda \{ I(\theta\le \lambda)+ \frac{(a\lambda-\theta)_+}{(a-1)\lambda} I(\theta>\lambda) \}$$
 
