@@ -15,22 +15,22 @@ Fourth-year PhD student in Biostatistics. BS in Applied mathematics and MS in Fi
 
 * Medical College of Wisconsin, Milwaukee, WI, USA
   
-Doctor of Philosophy, Biostatistics, 3.90/4.00	9/2020 – E 5/2025
+Doctor of Philosophy, Biostatistics, 3.90/4.00	                                           9/2020 – E 5/2025
   
-Relevant Coursework: Inference, Clinical Trials, Survival Analysis, Statistical Genetics, Bayes, MCMC, Bioinformatics, Models & Methods, Linear Models, Biostatistical computing(R, SAS, simulation), consulting, etc.//
+Relevant Coursework: Inference, Clinical Trials, Survival Analysis, Statistical Genetics, Bayes, MCMC, Bioinformatics, Models & Methods, Linear Models, Biostatistical computing(R, SAS, simulation), consulting, etc.
 
 * Rutgers University, New Brunswick, NJ, USA
   
-Master of Science, Financial Statistics, 3.90/4.00	9/2018 – 5/2020
+Master of Science, Financial Statistics, 3.90/4.00	                                       9/2018 – 5/2020
   
 * Northwest University, Xi’an, Shaanxi, China 
   
-Bachelor of Science, Applied Mathematics, 3.41/4.00	9/2014 – 7/2018
+Bachelor of Science, Applied Mathematics, 3.41/4.00	                                       9/2014 – 7/2018
 
 ## Skills
 
 * Core Domain Expertise:  Data Analysis, Biostatistics, Single-cell Analysis(Seurat), Survival Analysis, Machine Learning, Missing data imputation, Mathematical Modeling, Programming, Financial Analysis, Regression, Meta analysis, Feature selection, High-dimension data analysis, Bayes, Statistical consulting, Quantitative finance, Time series analysis
-* Computing and Programming:  R, SAS, MATLAB, Python, EMACS, OpenBUGS, Stan, Nimble, SPSS, C++, C, LaTex, shell script, Microsoft Office Suite, Lingo, SQL, R markdown, Rcpp
+* Computing and Programming:  R, SAS, Python(Pytorch, Tensorflow), MATLAB, EMACS, OpenBUGS, Stan, Nimble, SPSS, C++, C, LaTex, shell script, Microsoft Office Suite, Lingo, SQL, R markdown, Rcpp
 * Language skills: English, Chinese, Japanese
 
 
