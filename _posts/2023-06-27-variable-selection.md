@@ -9,7 +9,7 @@ comments: true
 
 ## Penalized least square
 
-Consider the linear regression model $y=X\beta+\epsilon$, where columns of \textbf{X} are orthonormal.
+Consider the linear regression model \\(y=X\beta+\epsilon\\), where columns of \textbf{X} are orthonormal.
 
 Let $z=\hat{\beta}^{OLS}=X^T y$, $\hat{y}=XX^Ty$. The form of penalized least square is
 
