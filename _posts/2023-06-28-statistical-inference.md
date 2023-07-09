@@ -90,7 +90,7 @@ Textbook: Statistical Inference (second edition) by George Casella and Roger L. 
 
 ### Sampling from normal distribution
 
-#### $ \chi^2 $ distribution
+#### \\(\chi^2\\) distribution
 
 #### t distribution
 
