@@ -29,9 +29,7 @@ To solve the minimization problem of (2), we consider a more general version
 ### A good penalty function should result in an estimator with three properties.
 
     * Unbiasedness: The resulting estimator is nearly unbiased when the true unknown parameter is large to avoid unnecessary modeling bias. The sufficient condition for unbiasedness for a large true parameter is that (p'_{\lambda}(|\theta|)=0\\) for large \\(|\theta|\\).
-
     * Sparsity: The resulting estimator is a threshold rule. A sufficient condition for sparsity is that the minimum of the function \\(|\theta|+p'_{\lambda}(|\theta|)\\) is positive.
-
     * Continuity: The resulting estimator is continuous in data z to avoid instability in model prediction.} The sufficient and necessary condition for continuity is that the minimum of the function $|\theta|+p'_{\lambda}(|\theta|)$ is attained at 0.
 
 ### Different penalty functions.
