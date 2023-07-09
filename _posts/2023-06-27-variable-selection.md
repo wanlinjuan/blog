@@ -58,23 +58,24 @@ $$\hat{\theta}=
 ### Minimization problem
   
 * Minimizing penalized least square
+  
 \\(
 \frac{1}{2}(y-X\beta)^T(y-X\beta)+n\sum^d_{j=1}p_{\lambda}(|\beta_j|)
 \\)
 
 * Minimizing outlier-resistant loss functions
+  
 \\(
 \sum^n_{i=1}\Psi(|y_i-x_i\beta|)+n\sum^d_{j=1}p_{\lambda}(|\beta_j|)
 \\)
 
 * Minimizing negative penalized likelihood function
+  
 \\(
 -\sum^n_{i=1}l_i(g(x_i^T\beta),y_i)+n\sum^d_{j=1}p_{\lambda}(|\beta_j|)
 \\)
 
-* Minimizing the Unified form $l(\beta)+n\sum^d_{j=1} p_{\lambda}(|\beta_j|)$.
-  
-It can be locally approximated by
+* Minimizing the Unified form $l(\beta)+n\sum^d_{j=1} p_{\lambda}(|\beta_j|)$. It can be locally approximated by
   
 $$l(\beta_0)+\nabla l(\beta_0)^T (\beta-\beta_0) +\frac{1}{2} (\beta-\beta_0)^T\nabla^2 l(\beta_0) (\beta-\beta_0) +\frac{1}{2} n\beta^T\Sigma_{\lambda} (\beta_0) \beta$$
 
