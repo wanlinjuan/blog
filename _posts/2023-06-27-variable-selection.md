@@ -58,19 +58,19 @@ $$\hat{\theta}=
 ### Minimization problem
   
 * Minimizing penalized least square
-$
+\\(
 \frac{1}{2}(y-X\beta)^T(y-X\beta)+n\sum^d_{j=1}p_{\lambda}(|\beta_j|)
-$
+\\)
 
 * Minimizing outlier-resistant loss functions
-$
+\\(
 \sum^n_{i=1}\Psi(|y_i-x_i\beta|)+n\sum^d_{j=1}p_{\lambda}(|\beta_j|)
-$
+\\)
 
 * Minimizing negative penalized likelihood function
-$
+\\(
 -\sum^n_{i=1}l_i(g(x_i^T\beta),y_i)+n\sum^d_{j=1}p_{\lambda}(|\beta_j|)
-$
+\\)
 
 * Minimizing the Unified form $l(\beta)+n\sum^d_{j=1} p_{\lambda}(|\beta_j|)$.
   
@@ -82,26 +82,26 @@ Using Newton-Raphson algorithm, the solution is
   
 $$\beta_1=\beta_0-[\nabla^2 l(\beta_0)+n\Sigma_{\lambda} (\beta_0)]^{-1}[\nabla^2 l(\beta_0)+nU_{\lambda} (\beta_0)]$$
   
-where $U_{\lambda}(\beta_0)=\Sigma_{\lambda}(\beta_0)\beta_0$.
+where \\(U_{\lambda}(\beta_0)=\Sigma_{\lambda}(\beta_0)\beta_0\\).
 
 
 ### Sampling properties and oracle properties
   
 * Theorem - Rate of convergence:
   
-Let $V_1, ..., V_n$ be iid, each with a density $f(V,\beta)$ that satisfies regularity conditions. If max$\{ |p''_{\lambda_n}(|\beta_{j0}|)| : \beta_{j0}\ne 0 \} \to 0$, then there exists a local maximizer $\hat{\beta}$ of $Q(\beta)$, s.t. $\parallel \hat{\beta}-\beta_0 \parallel =Op(n^{-1/2}+a_n)$, where $a_n= max\{ |p''_{\lambda_n}(|\beta_{j0}|)| : \beta_{j0}\ne 0 \}$.
+Let \\(V_1, ..., V_n\\) be iid, each with a density \\(f(V,\beta)\\) that satisfies regularity conditions. If max\\(\{ |p''_{\lambda_n}(|\beta_{j0}|)| : \beta_{j0}\ne 0 \} \to 0\\), then there exists a local maximizer \\(\hat{\beta}\\) of \\(Q(\beta)\\), s.t. \\(\parallel \hat{\beta}-\beta_0 \parallel =Op(n^{-1/2}+a_n)\\), where \\(a_n= max\{ |p''_{\lambda_n}(|\beta_{j0}|)| : \beta_{j0}\ne 0 \}\\).
 
 
 * Theorem - Oracle property:
   
-Let $V_1, ..., V_n$ be iid, each with a density $f(V,\beta)$ that satisfies regularity conditions. Assume that penalty function $p_{\lambda_n}(|\theta|)$ satisfies 
-$lim_{n\to\infty} inf lim_{\theta\to 0+}inf p'_{\lambda_n}(\theta)>0$.
+Let \\(V_1, ..., V_n\\) be iid, each with a density \\(f(V,\beta)\\) that satisfies regularity conditions. Assume that penalty function \\(p_{\lambda_n}(|\theta|)\\) satisfies 
+\\(lim_{n\to\infty} inf lim_{\theta\to 0+}inf p'_{\lambda_n}(\theta)>0\\).
 
-If $\lambda_n\to0$ and $\sqrt{n}\lambda)n\to\infty$ as $n\to \infty$, then with probability tending to 1, the root-n consistent local maximizers $\hat{\beta}=(\hat{\beta_1},\hat{\beta_2})^T$ in Theorem 1 must satisfy:
+If \\(\lambda_n\to0\\) and \\(\sqrt{n}\lambda)n\to\infty\\) as \\(n\to \infty\\), then with probability tending to 1, the root-n consistent local maximizers \\(\hat{\beta}=(\hat{\beta_1},\hat{\beta_2})^T\\) in Theorem 1 must satisfy:
 
-(a) Sparsity: $\hat{\beta_2}=0$.
+(a) Sparsity: \\(\hat{\beta_2}=0\\).
 
-(b) Asymptotic normality: $\sqrt{n}(I_1(\beta_{10})_\Sigma) [\hat{\beta_1}-\beta_{10} + (I_1(\beta_{10})+\Sigma)^{-1}b] \to_d N(0,I_1(\beta_{10}))$
+(b) Asymptotic normality: \\( \sqrt{n}(I_1(\beta_{10})_\Sigma) [\hat{\beta_1}-\beta_{10} + (I_1(\beta_{10})+\Sigma)^{-1}b] \to_d N(0,I_1(\beta_{10})) \\)
 
 
 Thus, the asymptotic covariance matrix of $\hat{\beta_1}$ is
