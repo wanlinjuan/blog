@@ -93,9 +93,8 @@ Let \\(V_1, ..., V_n\\) be iid, each with a density \\(f(V,\beta)\\) that satisf
 
 
 * Theorem - Oracle property:
-  
-Let \\(V_1, ..., V_n\\) be iid, each with a density \\(f(V,\beta)\\) that satisfies regularity conditions. Assume that penalty function \\(p_{\lambda_n}(|\theta|)\\) satisfies 
-\\(lim_{n\to\infty} inf lim_{\theta\to 0+}inf p'_{\lambda_n}(\theta)>0\\).
+
+Let \\(V_1, ..., V_n\\) be iid, each with a density \\(f(V,\beta)\\) that satisfies regularity conditions. Assume that penalty function \\(p_{\lambda_n}(|\theta|)\\) satisfies \\(lim_{n\to\infty} inf lim_{\theta\to 0+}inf p'_{\lambda_n}(\theta)>0\\).
 
 If \\(\lambda_n\to0\\) and \\(\sqrt{n}\lambda)n\to\infty\\) as \\(n\to \infty\\), then with probability tending to 1, the root-n consistent local maximizers \\(\hat{\beta}=(\hat{\beta_1},\hat{\beta_2})^T\\) in Theorem 1 must satisfy:
 
